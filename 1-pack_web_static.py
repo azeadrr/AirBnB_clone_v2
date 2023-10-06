@@ -5,8 +5,9 @@ archive from contents of the web_static"""
 from datetime import datetime
 from fabric.api import local
 from os import path
+
 def do_pack():
-    """function to generate the archive"""
+    """Compress before sending"""
     try:
         local("mkdir -p versions")
         res = local("tar -cvzf versions/web_static_{}.tgz web_static".format(datetime.now().strftime("%Y%m%d%H%M%s")),capture=True)
