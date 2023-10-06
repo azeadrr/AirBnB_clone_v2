@@ -9,9 +9,7 @@ def do_pack():
     """function to generate the archive"""
     try:
         local("mkdir -p versions")
-        neq = local("tar -cvzf versions/web_static_{}.tgz web_static"
-                    .format(datetime.now().strftime("%Y%m%d%H%M%s")),
-                    capture=True)
-        return neq
+        res = local("tar -cvzf versions/web_static_{}.tgz web_static".format(datetime.now().strftime("%Y%m%d%H%M%s")),capture=True)
+        return res
     except Exception:
         return None
