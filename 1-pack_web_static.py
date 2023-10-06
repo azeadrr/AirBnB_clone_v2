@@ -3,8 +3,9 @@
 from fabric.api import local
 from datetime import datetime
 
+
 def do_pack():
-    """ Compress before sending"""
+    """Compress before sending"""
     try:
         local("mkdir -p versions")
         res = local("tar -cvzf versions/web_static_{}.tgz web_static"
