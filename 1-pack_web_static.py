@@ -3,7 +3,6 @@
 from datetime import datetime
 from fabric.api import local
 
-
 def do_pack():
     """Compress before sending"""
     try:
