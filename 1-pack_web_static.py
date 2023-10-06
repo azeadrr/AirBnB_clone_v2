@@ -1,10 +1,11 @@
-#!/usr/bin/env bash
-"""Fabric script that generates a .tgz archive"""
+#!/usr/bin/python3
+"""generates an archive of web_static folder"""
 from datetime import datetime
 from fabric.api import local
 
+
 def do_pack():
-    """Compress before sending"""
+    """function to generate the archive"""
     try:
         local("mkdir -p versions")
         res = local("tar -cvzf versions/web_static_{}.tgz web_static"
