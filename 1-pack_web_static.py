@@ -9,9 +9,9 @@ def do_pack():
     """Compress before sending"""
     try:
         local("mkdir -p versions")
-        res = local("tar -cvzf versions/web_static_{}.tgz web_static".format
+        nes = local("tar -cvzf versions/web_static_{}.tgz web_static".format
                     (datetime.now().strftime("%Y%m%d%H%M%s")),
                     capture=True)
-        return res
+        return nes
     except Exception:
         return None
