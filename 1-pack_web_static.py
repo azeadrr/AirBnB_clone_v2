@@ -9,7 +9,7 @@ def do_pack():
     try:
         local("mkdir -p versions")
         res = local("tar -cvzf versions/web_static_{}.tgz web_static"
-                .format(datetime.now().strftime("%Y%m%d%H%M%s")),capture=True)
+                   .format(datetime.now().strftime("%Y%m%d%H%M%s")),capture=True)
         return res
     except Exception:
         return None
